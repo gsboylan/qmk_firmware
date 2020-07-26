@@ -88,6 +88,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 widetext.first = true;
             }
             return false;
+        case KC_ESC:
+            if (record->event.pressed && MODS_SHIFT) {
+                send_char('~');
+            }
+            return false;
         case U_T_AUTO:
             if (record->event.pressed && MODS_SHIFT && MODS_CTRL) {
                 TOGGLE_FLAG_AND_PRINT(usb_extra_manual, "USB extra port manual mode");
