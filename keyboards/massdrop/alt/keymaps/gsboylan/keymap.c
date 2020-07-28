@@ -48,6 +48,14 @@ void matrix_init_user(void) {
 void matrix_scan_user(void) {
 };
 
+void suspend_power_down_user(void) {
+    rgb_matrix_set_suspend_state(true);
+}
+
+void suspend_wakeup_init_user(void) {
+    rgb_matrix_set_suspend_state(false);
+}
+
 #define MODS_SHIFT  (get_mods() & MOD_BIT(KC_LSHIFT) || get_mods() & MOD_BIT(KC_RSHIFT))
 #define MODS_CTRL  (get_mods() & MOD_BIT(KC_LCTL) || get_mods() & MOD_BIT(KC_RCTRL))
 #define MODS_ALT  (get_mods() & MOD_BIT(KC_LALT) || get_mods() & MOD_BIT(KC_RALT))
@@ -91,8 +99,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_ESC:
             if (record->event.pressed && MODS_SHIFT) {
                 send_char('~');
+                return false;
             }
-            return false;
+            return true;
         case U_T_AUTO:
             if (record->event.pressed && MODS_SHIFT && MODS_CTRL) {
                 TOGGLE_FLAG_AND_PRINT(usb_extra_manual, "USB extra port manual mode");

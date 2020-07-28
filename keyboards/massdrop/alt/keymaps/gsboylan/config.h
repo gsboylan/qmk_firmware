@@ -124,4 +124,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGB_MATRIX_LED_PROCESS_LIMIT 15
 #define RGB_MATRIX_LED_FLUSH_LIMIT 10
 
+#define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_SOLID_COLOR
+#define RGB_MATRIX_STARTUP_HUE 250
+#define RGB_MATRIX_STARTUP_SAT 255
+#define RGB_MATRIX_STARTUP_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS
+#define RGB_DISABLE_WHEN_USB_SUSPENDED true
+
 #include "config_led.h"
