@@ -97,7 +97,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         case KC_ESC:
-            if (record->event.pressed && MODS_SHIFT) {
+            if (record->event.pressed && MODS_SHIFT && !MODS_CTRL) {
                 send_char('~');
                 return false;
             }
