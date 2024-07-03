@@ -2,7 +2,7 @@
 
 This is a handwired split board with an alice-like layout, utilizing RP2040 "[pico mini](https://www.aliexpress.us/item/3256805694704397.html)" microcontrollers. Note that the pinout of this microcontroller is not pro-micro compatible.
 
-This keyboard was designed in collaboration with Steve DaSilva.
+This keyboard was designed in collaboration with Amber DaSilva.
 
 In order to configure this board using VIA, you must first compile and flash the 'via' keymap and then load `keymaps/via/keyboard.json` in the Via gui editor.
 
